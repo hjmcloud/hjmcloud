@@ -3,11 +3,11 @@
 	Address     = ":8199"
 	ServerRoot  = "public"
 	ServerAgent = "gf-app"
-	LogPath     = "/tmp/log/gf-app/server"
+	LogPath     = "./log/gf-app/server"
 
 # Logger.
 [logger]
-    Path        = "/tmp/log/gf-app"
+    Path        = "./log/gf-app"
     Level       = "all"
     Stdout      = true
 
@@ -23,6 +23,17 @@
     debug = true
     # Database logger.
     [database.logger]
-        Path   = "/tmp/log/gf-app/sql"
+        Path   = "./log/gf-app/sql"
         Level  = "all"
         Stdout = true
+[gfcli]
+    [gfcli.build]
+        name     = "hjmcloud"
+        arch     = "amd64"
+        system   = "linux,drawin,windows"
+        mod      = "none"
+        cgo      = 0
+        pack     = "public"
+        version  = "v1.0.0"
+        output   = "./bin"
+        extra    = ""
